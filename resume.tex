@@ -1,0 +1,133 @@
+\documentclass[12pt,oneside]{article}
+\usepackage{fullpage}
+\usepackage{multirow}
+\usepackage{geometry}
+\usepackage{ifthen}
+
+\pagestyle{empty}
+%\geometry{letterpaper,tmargin=.5in,bmargin=.5in,lmargin=.5in,rmargin=.5in,headheight=0in,headsep=0in,footskip=.3in}
+\geometry{letterpaper,tmargin=.4in,bmargin=.4in,lmargin=.4in,rmargin=.4in}
+
+\newcommand{\header}[5]{
+	\begin{center}
+	{ \Large \textbf{#1}} \\
+	\vspace{3pt}
+	\
+	\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+	#2 & #4 \\
+	#3 & #5
+	\end{tabular*}
+	\end{center}
+}
+
+\newenvironment{mysection}[1]{
+	\vspace{5pt}
+	{ \Large \sc{#1}} \\
+	\vspace{-10pt}
+	\hrule
+	\begin{itemize}
+}{
+	\end{itemize}
+}
+
+\newcommand{\myitem}[3]{
+	\item
+	\vspace{-4pt}
+%	\begin{tabular*}{.9\textwidth}{p{.6\textwidth}@{\extracolsep{\fill}}r}
+%		#1 & #2 \\
+%	\end{tabular*}
+	\textbf{#1} \ifthenelse{\equal{#2}{}}{}{~--- { \small \textit{#2}}}
+	\ifthenelse{\equal{#3}{}}{}{\\ \small#3}
+}
+
+\newenvironment{mysubsection}[3]{
+	\myitem{#1}{#2}{#3}
+	\begin{itemize}
+	\vspace{-4pt}
+}{
+	\end{itemize}
+}
+
+\newcommand{\mysubitem}[1]{
+	\vspace{-2pt}
+	\item
+	%\begin{tabular*}{.8\textwidth}{p{.8\textwidth}}
+		#1
+	%\end{tabular*}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%     BEGIN DOCUMENT     %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%\font{
+
+\header{Trevor B. Saunders}{SMC 2462, 5032 Forbes Ave}{Pittsburgh, PA 15289-3224}{(609) 651-2761}{tbsaunde@cmu.edu}
+
+\begin{mysection}{Objective}
+\item Motivated programmer Especially interested in accessibility seeking a summer internship
+\end{mysection}
+
+\begin{mysection}{Education}
+	\begin{mysubsection}{Carnegie Mellon University}{Expected Graduation 2012}{}
+		\mysubitem{Pursuing a BS in Computer Science}
+		\mysubitem{Relevant Coursework:}
+		\begin{itemize}
+			\mysubitem{15-410 Operating System Design and Implementation (current course)}
+			\mysubitem{15-421 Web Comerce Security and Privacy (current course)}
+			\mysubitem{15-213 Introduction to Computer Systems (B)}
+			\mysubitem{15-451 Algorithms  (B)}
+		\end{itemize}
+		\mysubitem{3.22 Cumulative QPA through Spring 2009}
+	\end{mysubsection}
+	\begin{mysubsection}{Hopewell Valley Central High School}{September 2004 - June 2008}{}
+		\mysubitem{Graduated with 3.99 GPA}
+%		\mysubitem{Relevant Coursework}
+%		\begin{itemize}
+%			\mysubitem{AP Computer Science, Artificial Intelligence, Computer Architecture, Supercomputing Applications, Comparative Languages}
+%			\mysubitem{Robotics, Digital Electronics}
+%		\end{itemize}
+	\end{mysubsection}
+\end{mysection}	
+
+%\begin{mysection}{Work Experience}
+\begin{mysection}{Experience}
+\myitem{Chemistry Tutor}{September 2007 - April 2008}{}
+\myitem{Math Tutor}{September 2007 - April 2008}{}
+		\mysubitem{Administered systems and services including Debian and Gentoo Linux, Apache, MySQL, Kerberos, Drupal, svn, and git}
+	\begin{mysubsection}{Intern / contractor}{Summer 2010 - current}{Independence Science L.L.C.}
+		\mysubitem{administered company machines}
+		\mysubitem{Worked on bluetooth and communications protocols}
+	\end{mysubsection}
+	\begin{mysubsection}{Open source contributions}{Winter 2009 - Present}{}
+		\mysubitem{contributor to speech dispatcher / opentts}
+		\mysubitem{contributed patches to orca, and at-spi2}
+\mysubitem{implementing an open source ssip client for android}
+	\end{mysubsection}
+	%\begin{mysubsection}{
+\end{mysection}
+
+\begin{mysection}{Honors}
+	\myitem{Eagle Scout, Boy Scouts of America}{Spring 2008}{}
+	\myitem{National Honor Society}{Fall 2006 - Spring 2008}{}
+\end{mysection}
+
+\begin{mysection}{Extracurricular Activities}
+	\begin{mysubsection}{Boy Scouts of America}{Spring 2000 - Spring 2008}{}
+		\mysubitem{Eagle Scout}
+		\mysubitem{member of a six person 8 day cannoeing trip}
+		\mysubitem{Member of the Order of the Arrow (OA), the honor society of Scouting}
+	\end{mysubsection}
+\myitem{National Honor Society}{Fall 2006 - Spring 2008}{}
+\end{mysection}
+
+\begin{mysection}{Skills}
+	\begin{mysubsection}{Languages}{}{}
+		\mysubitem{Proficient with C, Shell and unix tools, Perl, Java, Standard ML}
+		\mysubitem{Familiar with  x86 assembly C\# C++, PHP, Python}
+	\end{mysubsection}
+\end{mysection}
+
+\end{document}
